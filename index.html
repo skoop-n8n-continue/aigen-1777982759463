@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile App Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Status Bar -->
+        <header class="status-bar">
+            <span class="time" id="current-time">12:00</span>
+            <div class="status-icons">
+                <img src="https://unpkg.com/lucide-static@latest/icons/signal.svg" alt="signal" width="14" height="14">
+                <img src="https://unpkg.com/lucide-static@latest/icons/wifi.svg" alt="wifi" width="14" height="14">
+                <img src="https://unpkg.com/lucide-static@latest/icons/battery.svg" alt="battery" width="14" height="14">
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="app-content">
+            <!-- Home Screen (Default) -->
+            <section id="home-screen" class="screen active">
+                <header class="screen-header">
+                    <h1>Dashboard</h1>
+                    <button class="icon-btn">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/bell.svg" alt="notifications" width="20" height="20">
+                    </button>
+                </header>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Activity</span>
+                        <span class="stat-value">84%</span>
+                        <div class="progress-bar"><div class="progress" style="width: 84%;"></div></div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Steps</span>
+                        <span class="stat-value">6,240</span>
+                        <img src="https://unpkg.com/lucide-static@latest/icons/footprints.svg" alt="steps" width="20" height="20" class="stat-icon">
+                    </div>
+                </div>
+
+                <div class="section-title">Recent Updates</div>
+                <div class="list-container">
+                    <div class="list-item">
+                        <div class="item-icon blue">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/check-circle.svg" alt="done" width="18" height="18">
+                        </div>
+                        <div class="item-info">
+                            <h3>Morning Workout</h3>
+                            <p>Completed at 8:30 AM</p>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="item-icon green">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/droplets.svg" alt="water" width="18" height="18">
+                        </div>
+                        <div class="item-info">
+                            <h3>Water Intake</h3>
+                            <p>1.5L of 2.0L goal</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search Screen -->
+            <section id="search-screen" class="screen">
+                <header class="screen-header">
+                    <div class="search-bar">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" alt="search" width="18" height="18">
+                        <input type="text" placeholder="Search activities...">
+                    </div>
+                </header>
+                <div class="placeholder-content">
+                    <img src="https://api.dicebear.com/9.x/shapes/svg?seed=search" alt="Empty search" width="120">
+                    <p>Looking for something specific?</p>
+                </div>
+            </section>
+
+            <!-- Profile Screen -->
+            <section id="profile-screen" class="screen">
+                <header class="screen-header">
+                    <h1>Profile</h1>
+                    <button class="icon-btn">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/settings.svg" alt="settings" width="20" height="20">
+                    </button>
+                </header>
+                <div class="profile-header">
+                    <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Skoop" alt="User Avatar" class="profile-avatar">
+                    <h2>Skoop Agent</h2>
+                    <p>Premium Member</p>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/user.svg" alt="user" width="18" height="18">
+                        <span>Personal Info</span>
+                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-right.svg" alt="arrow" width="16" height="16" class="chevron">
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/credit-card.svg" alt="payment" width="18" height="18">
+                        <span>Subscription</span>
+                        <img src="https://unpkg.com/lucide-static@latest/icons/chevron-right.svg" alt="arrow" width="16" height="16" class="chevron">
+                    </div>
+                    <div class="menu-item logout">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/log-out.svg" alt="logout" width="18" height="18">
+                        <span>Log Out</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-screen="home-screen">
+                <img src="https://unpkg.com/lucide-static@latest/icons/home.svg" alt="home" width="24" height="24">
+                <span>Home</span>
+            </button>
+            <button class="nav-item" data-screen="search-screen">
+                <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" alt="search" width="24" height="24">
+                <span>Search</span>
+            </button>
+            <button class="nav-item" data-screen="profile-screen">
+                <img src="https://unpkg.com/lucide-static@latest/icons/user.svg" alt="profile" width="24" height="24">
+                <span>Profile</span>
+            </button>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
